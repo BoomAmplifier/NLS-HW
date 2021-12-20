@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DesignProject</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>he1173dp</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14554,11 +14554,12 @@ $$\begin{equation}
 \end{equation}
 $$
 The structure of the system is as follows:</p>
-<div>
-<center>
+<p><div></p>
+<p><center>
     <img src="./DesignProject/2-0.svg" style="width: 25%;height: 25%"/>
 </center>
-</div><p>Let $s=j\omega$, we have
+&lt;/div&gt;
+Let $s=j\omega$, we have
 $$G(j\omega) = \frac{1}{-3\omega^2+1-j(\omega^3-3\omega)}$$
 From $Im[G(j\omega)]=0$, we have the intersection point between $G(j\omega)$ and the real axis is $G(j\sqrt{3})=-0.125+j0$.
 Draw the Nyquist Plot of $G(j\omega)$:</p>
@@ -14759,16 +14760,15 @@ $a=1$ and the initial value of the output signal is $0.1$.</p>
 <h4 id="Problem-3:">Problem 3:<a class="anchor-link" href="#Problem-3:">&#182;</a></h4><p>Consider a nonlinear system
 $$\ddot{x}=-x+x^2\dot{x}+\Delta(x,\dot{x})+bu$$<br>
 where $10 \leq b \leq 40 $, $|\Delta(x,\dot{x})| \leq 0.1(x^2 + \dot{x}^4)$.</p>
-<p>1.Sliding Mode Control:</p>
-<ul>
-<li>Design a robust sliding mode controller with the sliding surface $s=\dot{x}+2x$.</li>
-<li>Perform simulation to demonstrate the behavior of the closed-loop system in the phase plane. This will typically show some chattering.         </li>
-</ul>
-<p>2.Modified Sliding Mode Control:</p>
-<ul>
-<li>Modify the sliding mode control by replacing the switching function by a saturation function.   </li>
-<li>Perform simulation to demonstrate the behavior of the closed-loop system in the phase plane. This can often eliminate chattering.   </li>
-</ul>
+<p>1) Sliding Mode Control:</p>
+
+<pre><code>- Design a robust sliding mode controller with the sliding surface $s=\dot{x}+2x$.
+- Perform simulation to demonstrate the behavior of the closed-loop system in the phase plane. This will typically show some chattering.
+</code></pre>
+<p>2) Modified Sliding Mode Control:</p>
+
+<pre><code>- Modify the sliding mode control by replacing the switching function by a saturation function.
+- Perform simulation to demonstrate the behavior of the closed-loop system in the phase plane. This can often eliminate chattering.</code></pre>
 
 </div>
 </div>
@@ -14779,8 +14779,8 @@ Gain uncertainty term:
 $$\beta = \sqrt{\frac{b_{max}}{b_{min}}}=2$$
 $$0&lt;\frac{1}{2} \leq \alpha \leq 2 $$ 
 $$\hat{b}=\sqrt{b_{min}\times b_{max}} = 20$$</p>
-<ul>
-<li><p><strong>1. Define sliding surface</strong><br>
+<ol>
+<li><p>Define sliding surface : 
 $$s(t)=\dot{x}(t)+2x(t)$$
 $$\dot{s} =\ddot{s}+2\dot{s} = -x+x^2\dot{x}+2\dot{x}+\Delta+20\alpha u$$
 Design:<br>
@@ -14793,7 +14793,7 @@ $$\begin{equation}
 \end{equation}
 $$</p>
 </li>
-<li><p><strong>2. Modified Design</strong><br>
+<li><p>Modified Design<br>
 $$ k(x,\dot{x}) = 2\left[-0.1(x^2+\dot{x}^4)+\eta \right] + 2\left| -x+x^2\dot{x}+2\dot{x} \right|$$
 $$\begin{equation}
 \begin{array}{rCL}
@@ -14803,7 +14803,8 @@ $$\begin{equation}
 \end{equation}
 $$</p>
 </li>
-<li><p>Check Stablity:
+</ol>
+<p>Check:
 $$V(s)=\frac{1}{2}s^2$$
 $$\begin{equation}
 \begin{array}{rCl}
@@ -14814,8 +14815,13 @@ $$\begin{equation}
 \end{array}
 \end{equation}
 $$
-When $s\neq 0$.<br>
-State equation:
+When $s\neq 0$</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>State equation:
 $$\begin{equation}
 \left\{
 \begin{array}{rCl}
@@ -14826,8 +14832,6 @@ $$\begin{equation}
 \right.
 \end{equation}
 $$</p>
-</li>
-</ul>
 $$\begin{equation}
 \left\{
 \begin{array}{rCl}
@@ -14845,16 +14849,16 @@ $$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Simulation result</strong></p>
-<ul>
-<li><strong>1. Using $sign(s)$</strong><br>
+<ol>
+<li><strong>Using $sign(s)$</strong><br>
 The initial value of the output signal is -$5$. 
 Figure3-1 shows the waveform for output $x_1$, state variable $x_2$, control law $u$ and sliding surface $s$. As we can see from the figure, the output signal reachs $0$ while the sliding surface $s$ is still charttering.
 <div><center>
-  <img src="./DesignProject/3-1.svg" style="width: 80%;height: 80%"/>
+ <img src="./DesignProject/3-1.svg" style="width: 80%;height: 80%"/>
 </center>
 </div>
 <center>Figure3-1. output $x_1$, state variable $x_2$, control law $u$, sliding surface $s$</center></li>
-</ul>
+</ol>
 <p>Figure3-2 shows the waveform on the phase plane. Figure3-3 is the enlarged waveform for the sliding surface. We can see clearly chattering from the both figures.</p>
 <p><div></p>
 <center>
@@ -14876,16 +14880,16 @@ Figure3-1 shows the waveform for output $x_1$, state variable $x_2$, control law
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li><strong>2. Using $sat(s)$</strong><br>
+<ol>
+<li><strong>Using $sat(s)$</strong><br>
 The initial value of the output signal remain the same as before. 
 Figure3-4 shows the waveform for output $x_1$, state variable $x_2$, control law $u$ and sliding surface $s$. As we can see from the figure, the output signal reachs $0$ but there is no chattering on the sliding surface.
 <div><center>
-  <img src="./DesignProject/3-4.svg" style="width: 80%;height: 80%"/>
+ <img src="./DesignProject/3-4.svg" style="width: 80%;height: 80%"/>
 </center>
 </div>
 <center>Figure3-4. output $x_1$, state variable $x_2$, control law $u$, sliding surface $s$</center></li>
-</ul>
+</ol>
 <p>Figure3-5 shows the waveform on the phase plane. Figure3-6 is the enlarged waveform for the sliding surface. Both figure show that the chattering has been eliminated by using $sat(s)$ instead of $sign(s)$. But the system is less robustly.</p>
 <p><div></p>
 <center>
